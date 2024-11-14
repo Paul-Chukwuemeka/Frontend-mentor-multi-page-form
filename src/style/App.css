@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: solid; */
+}
+
+body {
+  height: 100vh;
+  background-color: hsl(217, 100%, 97%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Ubuntu", sans-serif;
+}
+.side-bar {
+  background: url(../assets/images/bg-sidebar-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: #473dff;
+}
+hr{
+  height: 2px;
+}
