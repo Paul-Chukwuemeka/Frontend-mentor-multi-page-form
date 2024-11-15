@@ -20,7 +20,7 @@ const Info = () => {
   }, []);
 
   return (
-    <div className="flex flex-col m-auto p-9 ">
+    <div className="flex flex-col m-auto p-9 relative h-full mt-5">
       <div>
         <h1 className="text-3xl font-bold text-[#02295a] mb-2">
           Personal Info
@@ -35,40 +35,39 @@ const Info = () => {
         onSubmit={(e) => e.preventDefault()}
         className="flex flex-col"
       >
-        <label className="text-lg" htmlFor="name">
+        <label className="text-md py-2" htmlFor="name" >
           Name
         </label>
         <input
           required
           onInput={(e) => {
             setName(e.target.value);
-            console.log(e.target.value);
+
           }}
           value={name}
           name="name"
           type="text"
           placeholder="e.g. John Doe"
-          className="border mb-2 p-2 rounded-lg"
+          className="border mb-2 p-2.5 rounded-lg"
         />
         <label
-          className="text-lg"
+          className="text-lg py-2"
           htmlFor="email"
         >
           Email Address
         </label>
         <input
           required
-          type="email"
+          type="Email"
           placeholder="e.g. JohnDoe@example.org"
-          className="border mb-2 p-2 rounded-lg"
+          className="border mb-2 p-2.5 rounded-lg"
           onInput={(e) => {
             setEmail(e.target.value);
-            console.log(e.target.value);
           }}
           value={email}
         />
         <label
-          className="text-lg"
+          className="text-lg py-2"
           htmlFor="phone"
         >
           Phone
@@ -77,17 +76,17 @@ const Info = () => {
           required
           type="tel"
           placeholder="e.g. +1 345 678 9012"
-          className="border m-1  p-2 rounded-lg"
+          className="border m-1  p-2.5 rounded-lg"
           onInput={(e) => {
             setPhone(e.target.value);
-            console.log(e.target.value);
           }}
+          
           value={phone}
         />
-      <div className="flex ml-auto justify-between">
+      <div className="flex flex-col justify-between absolute bottom-[17px] w-[89%]">
       <Link
         to={"/plan"}
-        className="self-end mt-[45px]"
+        className="self-end"
       >
         {" "}
         <Button />

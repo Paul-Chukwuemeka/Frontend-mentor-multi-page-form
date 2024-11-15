@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 const Plan = () => {
   const {
     setPage,
+    page,
     plan,
     setPlan,
     duration,
@@ -20,13 +21,8 @@ const Plan = () => {
     setPlanPrice,
   } = useContext(cartContext);
 
-  useEffect(() => {
-    setPage(2);
-  }, []);
-
-  useEffect(()=>{
-    console.log(planPrice)
-  }, [planPrice])
+  if (page !== 2) setPage(2);
+  
   const plans = [
     {
       img: ArcadeImg,
@@ -50,8 +46,15 @@ const Plan = () => {
       promo: "2 months free",
     },
   ];
+  
+    useEffect(() => {
+      const selectedPlan = plans.find(p => p.plan === plan);
+      if (selectedPlan) {
+        setPlanPrice(duration === "Monthly" ? selectedPlan.price : selectedPlan.priceYearly);
+      }
+    }, [plan, duration, setPlanPrice]);
   return (
-    <div className="flex flex-col m-auto p-9 ">
+    <div className="flex flex-col m-auto p-9 relative h-full">
       <h1 className="text-3xl font-bold text-[#02295a] mb-2">
         Select your plan
       </h1>
@@ -59,32 +62,26 @@ const Plan = () => {
         You have the option of monthly or yearly
         billing
       </p>
-      <div className=" flex justify-between">
+      <div className=" flex justify-between mt-5">
         {plans.map((p) => {
           return (
             <div
               className={
                 plan == p.plan
-                  ? "p-4 flex flex-col justify-between border-[#473dff] border h-44 w-40 rounded-lg "
-                  : "p-4 flex flex-col justify-between border h-44 w-40 rounded-lg"
+                  ? "p-4 flex flex-col justify-between border-[#473dff] border h-auto w-40 rounded-lg "
+                  : "p-4 flex flex-col justify-between border h-auto w-40 rounded-lg"
               }
               key={p.plan}
               onClick={() => {
                 setPlan(p.plan);
-                setPlanPrice(
-                  duration === "Monthly"
-                    ? `${p.price}/Mo`
-                    : `${p.priceYearly}/Yr `
-                );
               }}
             >
               <img
-                className="w-14"
+                className="w-10 mb-10"
                 src={p.img}
                 alt={p.plan}
               />
-              <div
-              >
+              <div>
                 <h2 className="text-xl text-[#02295a] font-bold">
                   {p.plan}
                 </h2>
@@ -103,7 +100,7 @@ const Plan = () => {
           );
         })}
       </div>
-      <div className="h-4 bg-[#d6d9e6] rounded-lg flex p-5 items-center justify-center mt-4">
+      <div className="h-4 bg-[#fafbff] rounded-lg flex p-5 items-center justify-center mt-4">
         <h2 className="p-0 m-0  ">Monthly</h2>
         <div
           className="bg-[#02295a] w-12 h-5 p-1 m-5 flex items-center rounded-full flex-col justify-center cursor-pointer"
@@ -123,7 +120,7 @@ const Plan = () => {
         </div>
         <h2 className="p-0 m-0 ">Yearly</h2>
       </div>
-      <div className="flex justify-between mt-[47px] items-center ">
+      <div className="flex justify-between items-center absolute bottom-[17px] w-[89%]">
         <Link
           to={"/"}
           className=" h-fit text-xl text-[#9699ab]"

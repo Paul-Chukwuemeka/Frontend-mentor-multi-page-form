@@ -20,9 +20,10 @@ body {
 }
 .side-bar {
   background: url(../assets/images/bg-sidebar-desktop.svg);
-  background-size: contain;
+  background-size: auto 600px;
   background-repeat: no-repeat;
-  color: #473dff;
+  /* color: #adbeff; */
+
 }
 hr{
   height: 2px;

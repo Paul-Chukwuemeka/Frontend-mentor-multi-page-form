@@ -20,6 +20,8 @@ function App() {
     useState("Monthly");
   const [selectedAddOns, setSelectedAddOns] =
     useState([]);
+  const [addOnPrice, setAddOnPrice] = useState(0);
+
 
   return (
     <cartContext.Provider
@@ -39,7 +41,9 @@ function App() {
         selectedAddOns,
         setSelectedAddOns,
         planPrice,
-        setPlanPrice
+        setPlanPrice,
+        addOnPrice,
+        setAddOnPrice,
       }}
     >
       <Container />
