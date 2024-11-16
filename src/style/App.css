@@ -15,16 +15,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   font-family: "Ubuntu", sans-serif;
 }
-.side-bar {
-  background: url(../assets/images/bg-sidebar-desktop.svg);
+.side-bar { 
   background-size: auto 600px;
   background-repeat: no-repeat;
-  /* color: #adbeff; */
+  color: #adbeff;
 
 }
 hr{
   height: 2px;
 }
+
+@media (max-width: 768px){
+  .container{
+    background-size: 100vw auto;
+  }
+  .side-bar {
+    background-size: auto 600px;
+    background-repeat: no-repeat;
+    color: #adbeff;
+  
+  }
+} 

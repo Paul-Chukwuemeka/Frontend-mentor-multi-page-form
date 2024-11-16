@@ -36,7 +36,7 @@ const Summary = () => {
         <section className="p-4 bg-[#fafbff] rounded-lg mt-5">
           <div className="flex justify-between items-center">
             <div>
-              <h2 className="text-lg font-bold text-[#02295a]">
+              <h2 className="text-lg font-medium text-[#02295a]">
                 {`${plan} ( ${duration})`}
               </h2>
               <Link
@@ -46,7 +46,7 @@ const Summary = () => {
                 Change
               </Link>
             </div>
-            <p className="text-[#02295a] font-semibold">{ duration === "Monthly" ? `+$${planPrice}/mo` : `+$${planPrice}/yr`}</p>
+            <p className="text-[#02295a] text-xl font-semibold">{ duration === "Monthly" ? `$${planPrice}/mo` : `$${planPrice}/yr`}</p>
           </div>
           <hr className="bg-[#9699ab]  my-1" />
           {selectedAddOns.map((addOn) => {

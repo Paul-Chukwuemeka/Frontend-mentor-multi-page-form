@@ -29,7 +29,7 @@ const steps = [
 const SideBar = () => {
   const { page } = useContext(cartContext);
   return (
-    <div className="side-bar w-[250px] border h-full rounded-xl flex flex-col p-4 text-white">
+    <div className="side-bar w-full md:w-[250px] border h-full rounded-xl flex md:flex-col p-4 text-white">
       {steps.map((step) => {
         return (
           <div
