@@ -29,7 +29,7 @@ const steps = [
 const SideBar = () => {
   const { page } = useContext(cartContext);
   return (
-    <div className="side-bar w-full md:w-[250px] border h-full rounded-xl flex md:flex-col p-4 text-white">
+    <div className="side-bar w-full md:w-[250px] h-full rounded-xl flex md:flex-col p-4 text-white">
       {steps.map((step) => {
         return (
           <div
@@ -41,13 +41,13 @@ const SideBar = () => {
                 className={
                   page == step.number
                     ? "bg-[#bfe2fd] text-black focus:outline-none border rounded-full h-10 w-10 mr-4 flex justify-center items-center"
-                    : "outline-none border rounded-full h-10 w-10 mr-4 flex justify-center items-center items- text-white"
+                    : "outline-none border rounded-full h-10 w-10 mr-4 flex justify-center items-center  text-white"
                 }
               >
                 {step.number}
               </button>
             }
-            <div>
+            <div className="step-tags">
               <p className="text-[#d6d9e6] text-500">
                 {step.step}
               </p>
