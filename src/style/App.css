@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: solid; */
 }
 
 body {
@@ -17,46 +16,58 @@ body {
   align-items: center;
   font-family: "Ubuntu", sans-serif;
 }
-.side-bar { 
+.side-bar {
   background-image: url(../assets/images/bg-sidebar-desktop.svg);
   background-size: auto 600px;
   background-repeat: no-repeat;
   color: #adbeff;
-
 }
-hr{
+hr {
   height: 2px;
 }
 
-
-
-@media (max-width: 768px){
-  body{
+@media (max-width: 768px) {
+  body {
     padding: 0;
     margin: 0;
-    display: grid;
-    grid-template-columns: auto;
-    width: 100vw;   
+    width: 100vw;
     background: url(../assets/images/bg-sidebar-mobile.svg);
     background-repeat: no-repeat;
-    background-size: 100vw 200px;
+    background-size: contain;
+    display: flex;
+    background-color: hsl(217, 100%, 97%);
   }
-  .container{
+  .container {
     width: 100vw;
-    background-size:cover 600px;
+    background-size: cover 600px;
     background-position: top;
     padding: 0;
-    position: relative;
+    justify-content: center;
+    align-items: center;
   }
   .side-bar {
-  background:none;
-  display: flex;
-  justify-content: space-around;
-  padding: 0;
-  width: 100vw;
-
+    background: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    width: 100vw;
   }
-  .step-tags{
+  .step-tags {
     display: none;
   }
-} 
+  .container-main {
+    background: white;
+    align-self: center;
+    width: 80%;
+    height: 500px;
+  }
+  .container-main-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-btn{
+    bottom: 30px;
+  }
+}

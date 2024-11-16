@@ -83,7 +83,7 @@ const Info = () => {
           
           value={phone}
         />
-      <div className="flex flex-col justify-between absolute bottom-[17px] w-[89%]">
+      <div className="nav-btn flex flex-col justify-between absolute bottom-[17px] w-[89%]">
       <Link
         to={"/plan"}
         className="self-end"
